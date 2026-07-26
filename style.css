@@ -1,0 +1,433 @@
+/* ============================================
+   VARIABLES CSS
+   ============================================ */
+:root {
+    /* Couleurs principales */
+    --couleur-primaire: #3b82f6;
+    --couleur-secondaire: #1e293b;
+    --couleur-texte: #1f2937;
+    --couleur-texte-clair: #6b7280;
+    --couleur-fond: #f8fafc;
+    --couleur-carte: #ffffff;
+    --couleur-code-fond: #1e293b;
+    --couleur-code-texte: #e2e8f0;
+    
+    /* Couleurs des badges */
+    --badge-nombres: #3b82f6;
+    --badge-nombres-fond: #dbeafe;
+    --badge-chaines: #8b5cf6;
+    --badge-chaines-fond: #ede9fe;
+    --badge-conversion: #10b981;
+    --badge-conversion-fond: #d1fae5;
+    
+    /* Couleurs sémantiques */
+    --vert: #10b981;
+    --rouge: #ef4444;
+    --orange: #f59e0b;
+    
+    /* Espacements */
+    --espace: 1rem;
+    --rayon: 12px;
+    --ombre: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --ombre-forte: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESET & STYLES GÉNÉRAUX
+   ============================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--couleur-texte);
+    background: var(--couleur-fond);
+    padding: var(--espace);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.entete {
+    text-align: center;
+    padding: 2rem var(--espace);
+    background: var(--couleur-carte);
+    border-radius: var(--rayon);
+    margin-bottom: 2rem;
+    box-shadow: var(--ombre);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entete h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--couleur-secondaire);
+}
+
+.sous-titre {
+    color: var(--couleur-texte-clair);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   CONTENEUR PRINCIPAL (GRID 2 COLONNES)
+   ============================================ */
+.conteneur-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ============================================
+   SOMMAIRE (STICKY)
+   ============================================ */
+.sommaire {
+    position: sticky;
+    top: 2rem;
+    background: var(--couleur-carte);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    box-shadow: var(--ombre);
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.sommaire h2 {
+    font-size: 1.1rem;
+    color: var(--couleur-secondaire);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--couleur-fond);
+}
+
+.sommaire ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sommaire li {
+    margin-bottom: 0.5rem;
+}
+
+.sommaire a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--couleur-texte);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sommaire a:hover {
+    background: var(--couleur-fond);
+    border-left-color: var(--couleur-primaire);
+    padding-left: 1rem;
+}
+
+.sommaire a:focus-visible {
+    outline: 2px solid var(--couleur-primaire);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   CONTENU PRINCIPAL (SECTIONS GÉNÉRÉES PAR JS)
+   ============================================ */
+.contenu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ============================================
+   SECTION D'UNE FONCTION
+   ============================================ */
+.fonction-section {
+    background: var(--couleur-carte);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    box-shadow: var(--ombre);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s ease;
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.fonction-section:hover {
+    box-shadow: var(--ombre-forte);
+}
+
+.fonction-section h2 {
+    font-size: 1.5rem;
+    color: var(--couleur-secondaire);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.fonction-section h2::before {
+    content: '🔹 ';
+    font-size: 1.2rem;
+}
+
+.fonction-section p {
+    color: var(--couleur-texte);
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* ============================================
+   BADGES DE CATÉGORIE
+   ============================================ */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.badge-nombres {
+    background: var(--badge-nombres-fond);
+    color: var(--badge-nombres);
+}
+
+.badge-chaines {
+    background: var(--badge-chaines-fond);
+    color: var(--badge-chaines);
+}
+
+.badge-conversion {
+    background: var(--badge-conversion-fond);
+    color: var(--badge-conversion);
+}
+
+/* ============================================
+   SIGNATURE DE LA FONCTION
+   ============================================ */
+.signature {
+    background: var(--couleur-fond);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin: 0.5rem 0 1rem 0;
+    border-left: 4px solid var(--couleur-primaire);
+}
+
+.signature code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: var(--couleur-secondaire);
+}
+
+/* ============================================
+   BLOCS DE CODE (EXEMPLES)
+   ============================================ */
+.exemples h3 {
+    font-size: 0.9rem;
+    color: var(--couleur-texte-clair);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.exemples pre {
+    background: var(--couleur-secondaire);
+    color: var(--couleur-code-texte);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}
+
+.exemples pre:last-child {
+    margin-bottom: 0;
+}
+
+.exemples code {
+    font-family: 'Courier New', monospace;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.pied {
+    text-align: center;
+    padding: 2rem var(--espace);
+    margin-top: 2rem;
+    color: var(--couleur-texte-clair);
+    font-size: 0.9rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   ANIMATION D'APPARITION
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Délai d'apparition pour chaque section */
+.fonction-section:nth-child(1) { animation-delay: 0.05s; }
+.fonction-section:nth-child(2) { animation-delay: 0.10s; }
+.fonction-section:nth-child(3) { animation-delay: 0.15s; }
+.fonction-section:nth-child(4) { animation-delay: 0.20s; }
+.fonction-section:nth-child(5) { animation-delay: 0.25s; }
+.fonction-section:nth-child(6) { animation-delay: 0.30s; }
+.fonction-section:nth-child(7) { animation-delay: 0.35s; }
+.fonction-section:nth-child(8) { animation-delay: 0.40s; }
+.fonction-section:nth-child(9) { animation-delay: 0.45s; }
+.fonction-section:nth-child(10) { animation-delay: 0.50s; }
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .conteneur-principal {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .sommaire {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+        margin-bottom: 0;
+    }
+
+    .sommaire ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.25rem;
+    }
+
+    .sommaire li {
+        margin-bottom: 0;
+    }
+
+    .sommaire a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .sommaire a:hover {
+        border-left-color: transparent;
+        border-bottom-color: var(--couleur-primaire);
+        padding-left: 0.6rem;
+    }
+
+    .entete h1 {
+        font-size: 2rem;
+    }
+
+    .fonction-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .fonction-section {
+        padding: 1rem;
+    }
+
+    body {
+        padding: 0.75rem;
+    }
+}
+
+/* Très petits écrans (téléphones) */
+@media (max-width: 480px) {
+    .sommaire ul {
+        grid-template-columns: 1fr;
+    }
+
+    .entete h1 {
+        font-size: 1.6rem;
+    }
+
+    .sous-titre {
+        font-size: 0.9rem;
+    }
+
+    .fonction-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .fonction-section h2::before {
+        content: '🔹';
+        font-size: 1rem;
+    }
+
+    .exemples pre {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .signature code {
+        font-size: 0.8rem;
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1440px) {
+    .conteneur-principal {
+        max-width: 1400px;
+        grid-template-columns: 300px 1fr;
+        gap: 2.5rem;
+    }
+
+    .entete h1 {
+        font-size: 3.5rem;
+    }
+
+    .fonction-section {
+        padding: 2rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITÉ
+   ============================================ */
+
+/* Réduction des mouvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus visible pour la navigation au clavier */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--couleur-primaire);
+    outline-offset: 2px;
+}
