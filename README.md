@@ -1,6 +1,6 @@
 # 🧰 Boîte à outils JavaScript - 10 fonctions utilitaires
 
-
+https://boite-a-outils-10-fonctions.vercel.app/
 
 ## 📌 Description
 Ce projet est un mini-site de documentation interactive présentant 10 fonctions JavaScript utilitaires. Chaque fonction est expliquée, documentée et surtout exécutée en temps réel avec des exemples concrets. Contrairement à une simple documentation statique, ce site affiche les résultats réellement calculés par le JavaScript, permettant aux visiteurs de voir immédiatement le comportement de chaque fonction. Ce projet a été réalisé dans le cadre de la Phase 2 du parcours Développeur Full Stack de l'Akieni Academy, spécifiquement pour la Semaine 7 (niveau Avancé), et constitue le livrable officiel de la semaine. L'objectif était de maîtriser les fonctions JavaScript sous toutes leurs formes (déclaration, expression, arrow functions), tout en réactivant les compétences HTML et CSS acquises lors du Module 1.
@@ -20,7 +20,7 @@ Le projet suit une arborescence stricte avec quatre fichiers principaux à la ra
 ## ⚙️ Installation et utilisation
 Pour utiliser ce projet, commence par cloner le repository GitHub sur ta machine locale avec la commande `git clone https://github.com/thomas-issoko/boite-a-outils-10-fonctions.git`. Ensuite, navigue dans le dossier du projet avec `cd boite-a-outils-10-fonctions`. Aucune dépendance ni installation supplémentaire n'est nécessaire car le projet utilise uniquement du HTML, CSS et JavaScript pur. Ouvre simplement le fichier `index.html` dans ton navigateur préféré (double-clic sur le fichier ou glisse-le dans une fenêtre de navigateur). La page se charge automatiquement et affiche le mini-site de documentation avec toutes les fonctions et leurs résultats. Pour tester les fonctions individuellement, tu peux ouvrir la console du navigateur (F12 ou clic droit → Inspecter → onglet Console) et appeler n'importe quelle fonction manuellement, par exemple `estPair(4)` ou `genererFibonacci(10)`. Le site est entièrement responsive et s'adapte à toutes les tailles d'écran, du mobile (375px) au grand écran (1440px).
 
-## 🚀 Commandes utiles
+## Commandes utiles
 Les commandes Git suivantes ont été utilisées pour la gestion de version : `git init` pour initialiser le repository local, `git add .` pour ajouter tous les fichiers au staging, `git commit -m "message clair"` pour valider les changements avec un message descriptif, `git remote add origin https://github.com/thomas-issoko/boite-a-outils-10-fonctions.git` pour lier le repository local au dépôt distant, et `git push -u origin main` pour pousser le code sur GitHub. Pour le déploiement sur GitHub Pages, il faut activer l'option dans les paramètres du repository (Settings → Pages → choisir la branche main comme source) et l'URL générée sera accessible publiquement. Aucune commande npm ou autre gestionnaire de paquets n'est nécessaire car le projet utilise uniquement des technologies front-end standards.
 
 ## 👀 Aperçu
